@@ -1,0 +1,20 @@
+\chapter{Results} \label{chap:results}
+
+It is \textbf{current best practices} to provide a brief overview on your most interesting results in the beginning.
+
+\newcommand{\vuln}{\faCircle}
+\newcommand{\notvuln}{\faCircle[regular]}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{@{}llcccc@{}}
+      \toprule
+       & Browser & XSS & SQLi & CSRF & Clickjacking \\
+      \midrule
+      \faFirefox & Firefox & \notvuln & \vuln & \vuln & \vuln \\
+      \faChrome  & Chrome & \vuln & \notvuln & \vuln & \vuln \\
+      \faSafari  & Safari & \vuln & \vuln & \notvuln & \vuln \\
+      \bottomrule
+    \end{tabular}
+    \caption{Write a short message that everyone should understand, e.g., \enquote{All browsers were found vulnerable (\vuln{}) to Clickjacking} instead of simply writing \enquote{Evaluation results.}. Also describe what the symbols mean.}
+  \end{table}

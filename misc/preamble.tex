@@ -1,0 +1,104 @@
+\setcounter{tocdepth}{3}  % Inhaltsverzeichnis bis Subsubsection
+\setcounter{secnumdepth}{3} % Nummerierung bis Subsubsection
+
+% General stuff
+\usepackage[utf8]{inputenc} % CHANGE HERE IF NECESSARY
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel} % last language given is used (here: english. Alternative: ngerman)
+\usepackage{lmodern}
+
+\usepackage{tikz} % used on frontpage
+
+
+% Set date here
+%\day=4 \month=5 \year=2023
+
+% Set name and title
+\author{Insert your name here}
+\title{Insert title here}
+\date{\today}
+
+% Bibliography
+\usepackage[style=numeric,giveninits=false,natbib=true,backend=biber,maxbibnames=99,defernumbers=true,language=autobib,date=long]{biblatex}
+\addbibresource{literature/literature.bib}
+
+%%%%%% %%%%%%
+
+% Load packages ...
+
+% Corporate Design
+\usepackage{eso-pic}
+\usepackage{color}
+% Comment out if the RUB fonts are installed
+% Link: https://noc.rub.de/~jobsanzl/latex/rubtexfonts-0.4.tar.gz
+%\usepackage{rubfonts2009}
+\newcommand{\setrubfontnormal}[1]{\fontfamily{rubscala}\fontsize{#1}{1}\selectfont}
+\newcommand{\setrubfontextra}[1]{\fontfamily{rubflama}\fontsize{#1}{1}\selectfont}
+\definecolor{rubgreen}{cmyk}{0.5,0,1,0}
+\definecolor{rubblue}{cmyk}{1,0.5,0,0.6}
+
+% Figures
+\usepackage{graphicx}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{marvosym}
+\usepackage{multirow}
+
+% Math stuff and units
+\usepackage{amsmath, amssymb, amsfonts}
+
+% Enable quotes by \enquote{}
+\usepackage[babel,english=american, german=quotes]{csquotes}
+
+\usepackage{fontawesome5}
+
+\usepackage[outputdir=../]{minted}
+% Listings
+\setminted{
+	frame=single, % single, lines, leftline, topline, bottomline, none
+	fontsize=\footnotesize,
+        % fontsize=\scriptsize,
+	linenos=true,
+	numbersep=5pt,
+	breaklines=true,
+	breakautoindent=true,
+	breakbefore=.,
+	breakafter=-,
+	escapeinside=~~
+}
+\BeforeBeginEnvironment{minted}{\smallskip}
+\AfterEndEnvironment{minted}{\smallskip}
+\setmintedinline{
+    fontsize=\small,
+    escapeinside=~~,
+    breakbefore=.,
+    breakafter=-:/\,
+}
+\newmintinline[code]{text}{}
+\newmintinline[js]{javascript}{}
+\newmintinline[html]{html}{}
+\newmintinline[json]{json}{}
+
+% Format page foot and header
+\usepackage{scrlayer-scrpage}
+\clearscrheadings
+\clearscrheadfoot
+\automark[section]{chapter}
+\ohead{\pagemark}
+\ihead{\headmark}
+\pagestyle{scrheadings}
+
+% Hyperlinks and menu for your document
+\usepackage[breaklinks,hyperindex,colorlinks,anchorcolor=black,citecolor=black,filecolor=black,linkcolor=black,menucolor=black,urlcolor=black,pdftex]{hyperref} % pagebackref: Add page number to the references where they can be found
+% DO NOT LOAD ANY OF YOUR PACKAGES BEYOND THIS PACKAGE
+
+\makeatletter
+\AtBeginDocument{
+ \hypersetup{
+   pdftitle = {\@title},
+   pdfauthor = {\@author},
+   pdfsubject={\@title},
+   pdfkeywords={OpenID Connect, add more}, % CHANGE HERE
+ }
+}

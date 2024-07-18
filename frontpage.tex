@@ -1,0 +1,48 @@
+% Hintergrund-Makro
+\newcommand\BackgroundPic{
+\put(0,0){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight]{images/front.png}%
+\vfill
+}}}
+
+\AddToShipoutPicture*{\BackgroundPic}
+\begin{titlepage}
+\makeatletter
+
+\enlargethispage{3cm}
+
+\begin{tikzpicture}[remember picture,overlay]
+\node[shift={(11.5cm,-23.1cm)},opacity=1] {\includegraphics[scale=0.3]{images/SE_logo.pdf}};
+\end{tikzpicture}
+
+ \vspace*{10cm}
+\begin{minipage}[b]{1\linewidth}
+	\sffamily
+
+	\textbf{\LARGE {\@title}}\\
+
+	\Large{\@author}\\
+ 
+	\hspace{-17.2mm}\includegraphics[scale=1.0]{images/rub_slogan}\\
+
+% 	\vspace*{35mm}
+	\vspace{4cm}
+	\normalsize{
+	Bachelor/Master's Thesis\@~~--~~\@date\\
+	Chair of Artificial Intelligence and Formal Methods.\\}
+	\newline
+	\normalsize{
+	\begin{tabular}{@{}ll@{}}
+	Supervisor: & Name of or first examiner \\
+	Advisor: & Name(s) of your other advisers\\
+	\end{tabular}
+	}
+\end{minipage}
+
+
+\makeatother
+\end{titlepage}
+\ClearShipoutPicture
