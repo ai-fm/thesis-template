@@ -1,0 +1,51 @@
+\section{Very Short Latex Tutorial}
+
+The very first thing you should do is fill out the tables at the top with your personal data.
+\\
+However, there are many tutorial online for every package, so this is more of a very very short tutorial how to use some common packages, mostly the \textit{natbib}.
+Foremost, we start with citations. As you can (for me on the left, but this depends on the software you are using), the there is a file called \textit{references.bib}. Here you can copy and past the bibtex reference you can download from most, if not all, website for paper (e.g. google schoolar…).
+However, here I'm using the \textit{natbib} package, for citation you have to option:
+\begin{enumerate}
+    \item use \textit{$\backslash$cite\{\}} command for a normal citation like \cite{Caldas}
+    \item use \textit{$\backslash$citet\{\}} for a citation like this \citet{Caldas}
+\end{enumerate}
+If change/delete the option [] for the \textit{natbib} (can be found in main.tex), a citation may look like this Caldas et al. [\citeyear{Caldas}]\todo{For this citation don't look at the latex "code" only at the pdf}
+
+You can also see how enumerations work (look at the latex code).
+However, most matrices, tables, equations work like this. Here are some examples:
+\begin{equation}
+    a^2+b^2=c^2
+\end{equation}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        a & b \\ \hline
+        c & d \\
+        \hline
+    \end{tabular}
+    \caption{This is a caption}
+    \label{tab:my_label}
+\end{table}
+
+With \textit{$\backslash$hline} you can make the lines around each column and row, see no \textit{$\backslash$hline}: \vspace{0.4cm}\\ % puts some space between table and text see top and bottom space
+\noindent % does what it say no indent
+\begin{tabularx}{\textwidth}{XX}
+    a & b \\
+    c & d
+\end{tabularx}
+You can use both \textit{table}/\textit{tabular} or \textit{tabularx}. If you don't need to control the width of each cell, but of the entire table and then evenly distribute the space within, use the tabularx package. For more information, you guessed it, google. You can also reference tables, see \ref{tab:my_label}, but only those you have labelled.
+\paragraph{Wait there is more}
+As you can see, all sections headline have no numeration. Normally with \textit{$\backslash$section\{\}} every section is numbered, but with \textit{$\backslash$section*\{\}} they are not numbered.
+Also with * the corresponding section/chapter etc. is not listed in the content, if you have one.
+See the section headline below, compared to all others.
+Besides, you can structure your text with paragraph/section/subsection and so on...
+
+\subsection{This is a subsection with a numeration}
+You have many many more options to structure your text, but this is beyond the scope of this proposal template.\\
+
+\paragraph{One last thing}
+\textcolor{red}{\textbf{For your file delete the tutorial file and the $\backslash$input\{...\} line in the main.tex or just comment (with \%) the $\backslash$input\{...\} in the main.tex!}}
+
+\paragraph{In summary} if you look at the latex "code" a view thing might become clearer. Otherwise, Google is your friend ;-). 
