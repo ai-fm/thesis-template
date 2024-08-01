@@ -1,0 +1,267 @@
+\documentclass[a4paper]{article}
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+\PassOptionsToPackage{table, xcdraw}{xcolor}
+% Some useful packages
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage[english]{babel} % or change to german
+
+\usepackage{amsmath}
+\usepackage[numbers]{natbib} % or without [numbers]
+\usepackage{tikz} % for vector graphics and flowchats
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{tabularx} % for "other" tables
+\usepackage{todonotes}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{svg}
+
+% if you want to have coloured links use colorlinks=true, allcolors=blue between []
+\usepackage[]{hyperref}
+
+
+%%%%% IMPORTANT %%%%%
+%%%%% Please fill out the following lines %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\studentnameone}{Lisa Musterfrau} % your full name
+
+\newcommand{\studentemailone}{lisa.musterfrau@rub.de} % your email
+
+\newcommand{\studentnametwo}{Max Mustermann} % your full name
+
+\newcommand{\studentemailtwo}{max.mustermann@rub.de} % your email
+
+\newcommand{\thesistype}{Bachelor/Master Thesis} % thesis type
+
+\newcommand{\thesistitle}{Title of the Project} % Project title
+
+\newcommand{\supervisor}{Name of supervisor, name of company}
+
+% courses first student
+\newcommand{\coursesone}{\textit{list here all the relevant courses with course code and name of the course}}
+
+% courses second student
+\newcommand{\coursestwo}{\textit{list here all the relevant courses with course code and name of the course}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Hopefully you don't have to touch this below
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{\makebox[\linewidth][s]{Ruhr University Bochum, Chair of Artificial Intelligence and Formal Methods, Prof. Dr. Nils Jansen}}
+
+% Add Logos
+\begin{figure}[H]
+    \centering
+    \subfloat{
+        \includegraphics[width=0.3840\textwidth]{latex/figures/LogoRUB.jpg}
+    }
+    \hfill
+    \subfloat{
+        \includegraphics[width=0.40\textwidth]{latex/figures/LogoAIFM.png}
+    }
+\end{figure}
+
+\begin{flushright}
+    \today
+\end{flushright}
+
+
+
+
+\begin{center}
+%    \Large{\textbf{Thesis Proposal in Software Engineering}}\\
+%    \bigskip
+    {\Large{\textbf{\thesistitle}}}\\
+\end{center}
+\bigskip
+\noindent\makebox[\textwidth]{
+\begin{tabularx}{\textwidth}{|X|X|}
+    \hline
+    Name and email address of student 1 & \studentnameone, \studentemailone \\
+    \hline
+    Completed courses relevant for thesis work, student 1: & \coursesone \\
+    \hline
+    Name and email address of student 2 & \studentnametwo, \studentemailtwo \\
+    \hline
+    Completed courses relevant for thesis work, student 2: & \coursestwo \\
+    \hline
+    % \studentnameone, \studentemailone:  & \coursesone \\
+    % \studentnametwo, \studentemailtwo: & \coursestwo
+\end{tabularx}
+}
+
+\vspace{0.4cm}
+\noindent\makebox[\textwidth]{
+\begin{tabularx}{\textwidth}{|X|X|}
+    \hline
+    Type of thesis (Bachelor/Master) & \thesistype \\ \hline
+    Company supervisor (if applicable) & \supervisor \\ 
+    \hline
+\end{tabularx}
+}
+
+% \bigskip
+% \begin{flushleft}
+%     {\Large{\textbf{Consent}}}\\
+%     \bigskip 
+%     I agree that my thesis will be permanently stored in electronic and printed form at the Chair of Software Engineering and that the results from this thesis may be further used in research in accordance with good scientific practice. Furthermore, I agree that the thesis may be published on the website of the chair.
+% \end{flushleft}
+
+
+% \vspace{0.4cm}
+% \noindent\makebox[\textwidth]{
+% \begin{tabularx}{\textwidth}{XXX}
+%     \dotfill & \dotfill \\
+%     Date & Signature    
+% \end{tabularx}
+% }
+
+
+
+%%%%%%% include your chapters here %%%%%%
+%%%%%%% Or start here and write down all sections in this document %%%%%%
+% With include every chapter starts on a new page with input not
+
+\input{chapter/1_Introduction.tex}
+\input{chapter/2_Background.tex}
+\input{chapter/3_Problem.tex}
+\input{chapter/4_Methodology.tex}
+\input{chapter/5_Validity.tex}
+
+\bibliographystyle{ieeetr}
+\def\bibpreamble{Reference all sources that are cited in your proposal using, e.g., the APA, Harvard, or IEEE style.}
+\nocite{*}
+\bibliography{references}
+\newpage
+%\bigskip
+\begin{flushleft}
+    {\Large{\textbf{Consent for Publication and Colloquium Attendance}}}\\
+    \bigskip 
+    As publicly funded researchers, we aim to contribute to the research community by publishing this work, so other researchers can use and further develop this knowledge. I agree that my thesis will be permanently and publicly stored on research gate\footnote{\url{https://www.researchgate.net/}} or a university publication server. It can then be indexed by, for instance, Google Scholar so that it can be found and referenced by other researchers.\\
+    
+    We are also committed to open software. I agree to put the created software under a BSD-style license or another license agreed with the supervisors. The planned license is stated in the proposal.\\
+
+         
+\end{flushleft}
+\vspace{0.4cm}
+\noindent\makebox[\textwidth]{
+\begin{tabularx}{\textwidth}{XXX}
+    \dotfill & \dotfill \\
+    Date & Signature    
+\end{tabularx}
+}
+\bigskip
+\begin{flushleft}
+	{\Large{\textbf{Registration}}}\\
+	\bigskip 
+	As soon as this proposal is accepted, you are allowed to start the registration process. Note that the start of the registration will give you a hard deadline by the exam office. Extensions are not possible, unless something unforeseen happened that is not in the responsibility of the thesis student. It is usually advisable to get into the topic a bit more before registering.
+\end{flushleft}
+\bigskip
+\begin{flushleft}
+	{\Large{\textbf{Colloquium}}}\\
+	\bigskip 
+	More information about the colloquiums, for instance, dates, location, and List of Confirmation are available on the chair's website.
+\end{flushleft}
+
+
+%%\clearpage
+%\newpage
+%\centering
+%\begin{table}
+%	\begin{center}
+%		\begin{tabular}{|>{\centering\arraybackslash}p{0.5\textwidth}|>{\centering\arraybackslash}p{0.2\textwidth}|>{\centering\arraybackslash}p{0.2\textwidth}|}
+%			\hline
+%			\textbf{Talk} & \textbf{Date} & \textbf{Confirmation} \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%			& & \\
+%			& & \\
+%			& & \\
+%			\hline
+%		\end{tabular}
+%	\end{center}
+%\end{table}
+
+\end{document}
